@@ -1,0 +1,245 @@
+/* ==================== CYBER DARK MODE STYLES ==================== */
+:root {
+    --primary-color: #ff9800;        /* bright orange accent */
+    --secondary-color: #00e5ff;      /* neon teal for hover glow */
+    --background-color: #0a141f;     /* very dark blue-teal background */
+    --card-background: #0f1c26;      /* dark card/table background */
+    --text-color: #e0e0e0;           /* light gray text */
+    --border-color: #1b2a36;         /* subtle dark border */
+    --shadow-color: rgba(255, 152, 0, 0.5); /* initial glowing shadow */
+}
+
+/* ==================== BODY ==================== */
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    background: var(--background-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==================== NAVIGATION BUTTONS ==================== */
+.view-selector {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.view-button {
+    background: var(--primary-color);
+    color: #0a141f;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 0 8px var(--primary-color);
+    transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+.view-button:hover {
+    box-shadow: 0 0 20px var(--secondary-color), 0 0 40px var(--secondary-color);
+    color: #fff;
+}
+
+.view-button.active {
+    background: var(--secondary-color);
+    color: #0a141f;
+    box-shadow: 0 0 12px var(--secondary-color);
+}
+
+/* ==================== DISPLAY CONTAINER ==================== */
+.display-container {
+    background: var(--card-background);
+    border-radius: 12px;
+    padding: 2rem;
+    min-height: 400px;
+    box-shadow: 0 0 12px var(--shadow-color);
+    transition: box-shadow 0.3s, background 0.3s;
+}
+
+/* ==================== LOADING & ERROR ==================== */
+.loading {
+    text-align: center;
+    color: #bbb;
+    font-style: italic;
+    padding: 2rem;
+}
+
+.error {
+    background: #330000;
+    border: 1px solid #ff6f00;
+    color: #ffab40;
+    padding: 1.5rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* ==================== CARDS ==================== */
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.amiibo-card {
+    width: 220px;
+    padding: 1em;
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.amiibo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--secondary-color), 0 0 40px var(--secondary-color);
+}
+
+/* ==================== IMAGES ==================== */
+.amiibo-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ==================== TABLE ==================== */
+.amiibo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.amiibo-table th,
+.amiibo-table td {
+    border: 1px solid #1b2a36;
+    padding: 0.5em 0.75em;
+    text-align: left;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.amiibo-table th {
+    background-color: #0f1c26;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 8px var(--primary-color);
+}
+
+.amiibo-table tr:hover {
+    background: #1b2a36;
+    box-shadow: 0 0 15px var(--secondary-color) inset;
+}
+
+
+.amiibo-thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ==================== CATEGORY BOXES ==================== */
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.category-box {
+    width: 220px;
+    padding: 1em;
+    background: #0f1c26;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--secondary-color), 0 0 40px var(--secondary-color);
+}
+
+.category-box h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+.category-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    text-align: left;
+    color: #bbb;
+}
+
+/* ==================== STATS BOXES ==================== */
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.stat-box {
+    flex: 1 1 300px;
+    padding: 1rem;
+    border-radius: 12px;
+    background: #0f1c26;
+    color: #e0e0e0;
+    box-shadow: 0 0 12px rgba(255, 152, 0, 0.5);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px var(--secondary-color), 0 0 50px var(--secondary-color);
+}
+
+.stat-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.stat-box li {
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+.stat-box .bar {
+    height: 8px;
+    background: var(--primary-color);
+    margin-top: 4px;
+    border-radius: 4px;
+}
+
+/* ==================== ASSIGNMENT BOX ==================== */
+.asst-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #0a141f;
+    border-radius: 12px;
+    color: #e0e0e0;
+}
